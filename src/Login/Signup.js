@@ -33,6 +33,7 @@ class Signup extends Component {
       LastName: "",
       UserName: "",
       Email: "",
+      InviteCode: "",
       Password: "",
       RetypePassword: "",
       radioButtons: [
@@ -161,10 +162,11 @@ class Signup extends Component {
       UserName,
       Email,
       Password,
+      InviteCode,
       RetypePassword,
     } = this.state;
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (FirstName == "" && LastName == "" && Email == "" && Password == "" && RetypePassword == "" && UserName == "") {
+    if (FirstName == "" && LastName == "" && Email == "" && Password == "" && RetypePassword == "" && UserName == "" && InviteCode == "")  {
       alert("Please enter Complete Detail");
       this.setState({ email: "Please enter Complete Detail" });
     }
@@ -172,6 +174,9 @@ class Signup extends Component {
       alert("Email is Not Correct");
       this.setState({ email: "Email is Not Correct" });
       return false;
+    }
+    else if (InviteCode != "dmistheking") {
+      alert("Invite Code not correct");
     }
     else if (Password !== RetypePassword) {
       alert("Passwords don't match");
@@ -227,6 +232,7 @@ class Signup extends Component {
       UserName,
       Email,
       Password,
+      InviteCode,
       RetypePassword,
     } = this.state;
     return (
@@ -404,6 +410,29 @@ class Signup extends Component {
                 placeholder={CONSTANT.SignupEmail}></TextInput>
               <AntIcon name="mail" size={15} color={"#999999"} style={{ top: 15 }} />
             </View>
+            <View
+              style={{
+                borderBottomColor: "#dddddd",
+                borderBottomWidth: 0.6
+              }}
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <TextInput
+                style={{ fontSize: 17, color: '#323232', height: 45, marginLeft: 5, width: '90%' }}
+                underlineColorAndroid="transparent"
+                editable={true}
+                placeholderTextColor="#999999"
+                autoCompleteType="invitecode"
+                onChangeText={InviteCode => this.setState({ InviteCode })}
+                placeholder="Type your Invite Code"></TextInput>
+          
+            </View>
+               <View
+              style={{
+                borderBottomColor: "#dddddd",
+                borderBottomWidth: 0.6
+              }}
+            />
             <View
               style={{
                 borderBottomColor: "#dddddd",
