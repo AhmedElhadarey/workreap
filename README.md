@@ -11,4 +11,6 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 and then run cd android && ./gradlew assembleRelease
 
 
+keep file name - "workreap-app" in local pc
+
  
