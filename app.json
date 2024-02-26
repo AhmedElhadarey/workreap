@@ -1,4 +1,18 @@
 {
   "name": "WorkreapMobile",
-  "displayName": "WorkreapMobile"
+  "displayName": "WorkreapMobile",
+  "expo": {
+    "name": "WorkreapMobile",
+    "slug": "WorkreapMobile",
+    "ios": {
+      "bundleIdentifier": "com.digitalmarketgg"
+    },
+    "android": {
+      "package": "com.digitalmarketgg"
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "http://localhost:3000/api/manifest"
+    }
+  }
 }
